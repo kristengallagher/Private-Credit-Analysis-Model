@@ -62,7 +62,7 @@ This model evaluates a specialty loan secured by a guaranteed contract, structur
 - Approval recommendation with supporting rationale
 
 **Tools**
-- Microsoft Excel — named ranges, dynamic formulas, conditional formatting, data validation, PivotTables, 
+- Microsoft Excel: dynamic formulas, named ranges, conditional formatting, data validation, PivotTables, 
 
 ## Disclaimer
 
