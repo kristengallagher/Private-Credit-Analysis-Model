@@ -1,5 +1,10 @@
 # Private Credit Analysis Model
 
+LTCg = Loan Amount / Remaining Guaranteed Salary
+  Maximum guideline: 0.25
+
+* DTA (Debt-to-Assets)
+
 Full-cycle credit underwriting model for a $10.25M guaranteed contract facility
 
 ## Overview
