@@ -1,4 +1,4 @@
-# Private Credit Analysis Model
+# Private Credit Contract Loan Analysis Model
 
 ## Overview
 This model evaluates specialty loans secured by guaranteed contracts, structured as a 36-month facility with a 12-month deferral period followed by 24 months of principal and interest payments. The analysis covers the full underwriting lifecycle from initial credit assessment through approval recommendation.
@@ -67,13 +67,7 @@ Deferral Period: 12 months (0 payments)
 Repayment Period: 24 months (principal + interest)
 Total Term: 36 months
 ```
-
-* Four-year cash flow analysis
-
-```python
-Net Cash Flow = Guaranteed Salary - Documented Expenses
-Available for Debt Service = Net Cash Flow (annual)
-```
+![Amortization Schedule](images/Schedule_PC.png)
 
 * Sensitivity analysis: 30 scenarios
 
@@ -84,6 +78,16 @@ Term Range: 24 – 36 months
 Output: Minimum Annual DSCR, Total Interest Income
 ```
 
+![Sensitivity Analysis Heatmap](images/sensitivity_Heatmap.png)
+
+* Four-year cash flow analysis
+
+```python
+Net Cash Flow = Guaranteed Salary - Documented Expenses
+Available for Debt Service = Net Cash Flow (annual)
+```
+![Cash Flow Analysis](images/CF_PC.png)
+
 * Interest Reserve & Fees
 
 ```python
@@ -92,8 +96,11 @@ Origination Fee = 3% of Loan Amount
 Documentation Fee = 10% of Loan Amount
 Total Fees = Interest Reserve + Origination Fee + Documentation Fee
 ```
+ 
 * Personal financial statement (PFS)
   * Balance sheet of liquid and non-liquid assets
+ 
+ ![Cash Flow Analysis](images/PFS_PC.png)
 
 ### Credit Documentation
 
@@ -146,6 +153,3 @@ Total Fees = Interest Reserve + Origination Fee + Documentation Fee
 ## License
 
 © 2025 Kristen Gallagher. All rights reserved. This work is made available for viewing and reference purposes only. You may not reproduce, distribute, modify, or claim this work as your own without explicit written permission from the author.
-
-# NBA Contract Loan Credit Analysis Model
-
