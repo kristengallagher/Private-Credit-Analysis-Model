@@ -1,10 +1,10 @@
 # Private Credit Analysis Model
 
-Full-cycle credit underwriting model for a $10.25M guarranteed contract loan facility: credit memo, amortization schedule, cash flow analysis, sensitivity analysis, and personal financial statement.
+Full-cycle credit underwriting model for a $10.25M guaranteed contract facility
 
 ## Overview
 
-This model evaluates a specialty loan secured by a guaranteed contract, structured as a 36-month facility with a 12-month deferral period followed by 24 months of principal and interest payments. The analysis covers the full underwriting lifecycle from initial credit assessment through approval recommendation.
+This model evaluates specialty loans secured by guaranteed contracts. The analysis covers the full underwriting lifecycle from initial credit assessment through approval recommendation, including cash flow projections, debt service coverage analysis, and risk assessment
 
 ## Model Structure
 
@@ -13,14 +13,14 @@ This model evaluates a specialty loan secured by a guaranteed contract, structur
 | Cover | Deal summary and table of contents |
 | Summary | Credit memorandum with approval recommendation |
 | Guidelines | Underwriting standards compliance, key ratio analysis, and risk flags with mitigants |
-| Cash Flow | Four-year personal cash flow analysis detailing gross income, taxes, living expenses, and net cash available for debt service |
-| Schedule | Full 36-month amortization schedule with deferral period, monthly P&I breakdown, and lender return summary |
+| Cash Flow | Four-year personal cash flow model detailing capital available for debt service |
+| Schedule | 36-month amortization schedule with 12 month deferral period, and lender return summary |
 | Sensitivity | Dual sensitivity analysis stress-testing lender interest income and minimum annual DSCR across 30 rate and term scenarios |
-| Inputs | Centralized deal inputs including loan parameters, fee structure, and borrower real estate and mortgage detail |
-| PFS | Personal financial statement detailing borrower assets, liabilities, net worth, and annual income summary |
-| Contract | Uniform player contract compensation exhibit with incentive structure and contract risk analysis |
+| Inputs | Centralized deal inputs: loan parameters, fee structure, and borrower real estate debt |
+| PFS | Personal financial statement detailing borrower assets, liabilities, and net worth |
+| Contract | Uniform player contract compensation exhibit with incentive structure and analysis |
 
-## Key Deal Metric
+## Key Deal Metrics
 
 | Metric | Value |
 |---|---|
@@ -37,31 +37,43 @@ This model evaluates a specialty loan secured by a guaranteed contract, structur
 | Total Upfront | $2,352,739 |
 | Total Lender Return | $2,172,978 |
 
-## Analytical Framework
+## Model Framework
 
 **Credit Analysis**
-- Debt Service Coverage Ratio (DSCR)
-- Loan-to-Contract (LTCg) and collateral coverage analysis
-- Debt-to-Asset (DTA) and Debt-to-Income (DTI) ratios
-- Interest coverage and liquidity analysis
-- Credit assessment framework
-- Credit history evaluation 
-- Risk flag identification and mitigant structuring
+- Debt Service Coverage (DSCR) 
+- DSCR = Annual Net Cash Flow / Annual Debt Service
+- Loan-to-Contract (LTCg) 
+LTCg = Loan Amount / Remaining Guaranteed Salary
+- Debt-to-Asset (DTA) 
+DTA = Total Liabilities / Total Assets
+- Debt-to-Income (DTI) 
+DTI = Monthly Debt Obligation / Monthly Income
+- Interest coverage 
+Interest Coverage = Annual Net Cash Flow / Annual Interest Expense
+- Liquidity and collateral coverage
+Collateral Coverage = Remaining Guaranteed Salary / Loan Amount
+Liquidity buffer: months of available cash relative to monthly debt service
 
-**Financial Modeling**
-- Amortization schedule with deferral period
-- Four-year personal pro forma cash flow forecast
-- Dual sensitivity analysis across rate and term scenarios
-- Personal financial statement construction
+**Financial Models**
+- Amortization schedule with 12-month deferral period
+Principal and interest payment schedule; deferred period followed by 24 months of active repayment
+- Four-year cash flow analysis
+Net cash available for debt service derived from guaranteed contract income and documented expenses
+- Sensitivity analysis 
+Dual sensitivity stress-testing minimum annual DSCR and total interest income across interest rate (5–12%) and term (24–36 months) combinations
+- Personal financial statement (PFS)
+Balance sheet of liquid and non-liquid assets; liabilities and net worth
 
 **Credit Documentation**
 - Formal credit memorandum
 - Underwriting standards compliance table
 - Contract risk analysis
-- Approval recommendation with supporting rationale
+Risk factors identified (DSCR deterioration, credit profile, use of proceeds) with severity ratings and lender mitigants
+- Approval recommendation
+Credit decision backed by quantitative analysis and qualitative risk assessment
 
 **Tools**
-- Microsoft Excel: dynamic formulas, named ranges, conditional formatting, data validation, PivotTables, 
+- Microsoft Excel: dynamic formulas, named ranges, conditional formatting, data validation, PivotTables
 
 ## Disclaimer
 
@@ -70,3 +82,5 @@ This model evaluates a specialty loan secured by a guaranteed contract, structur
 ## License
 
 © 2025 Kristen Gallagher. All rights reserved. This work is made available for viewing and reference purposes only. You may not reproduce, distribute, modify, or claim this work as your own without explicit written permission from the author.
+
+
