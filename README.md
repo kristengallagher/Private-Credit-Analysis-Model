@@ -20,7 +20,7 @@ This model evaluates a specialty loan secured by a guaranteed contract, structur
 | PFS | Personal financial statement detailing borrower assets, liabilities, net worth, and annual income summary |
 | Contract | Uniform player contract compensation exhibit with incentive structure and contract risk analysis |
 
-## Key Deal Metrics
+## Key Deal Metric
 
 | Metric | Value |
 |---|---|
@@ -44,16 +44,15 @@ This model evaluates a specialty loan secured by a guaranteed contract, structur
 - Loan-to-Contract (LTCg) and collateral coverage analysis
 - Debt-to-Asset (DTA) and Debt-to-Income (DTI) ratios
 - Interest coverage and liquidity analysis
-- 5 C's credit assessment framework
+- Credit assessment framework
 - Credit history evaluation 
 - Risk flag identification and mitigant structuring
 
 **Financial Modeling**
 - Amortization schedule with deferral period
-- Four-year personal cash flow forecast
+- Four-year personal pro forma cash flow forecast
 - Dual sensitivity analysis across rate and term scenarios
 - Personal financial statement construction
-- Named ranges and dynamic formula architecture
 
 **Credit Documentation**
 - Formal credit memorandum
