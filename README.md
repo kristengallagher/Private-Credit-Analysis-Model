@@ -1,7 +1,12 @@
 # Private Credit Analysis Model
 
-LTCg = Loan Amount / Remaining Guaranteed Salary
-  Maximum guideline: 0.25
+**Credit Analysis**
+
+* DSCR (Debt Service Coverage Ratio)
+
+DSCR = Annual Net Cash Flow / Annual Debt ServiceLTCg = Loan Amount / Remaining Guaranteed Salary
+
+Maximum guideline: 0.25
 
 * DTA (Debt-to-Assets)
 
