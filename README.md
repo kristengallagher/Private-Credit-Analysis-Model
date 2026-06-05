@@ -1,36 +1,124 @@
 # Private Credit Analysis Model
 
-**Credit Analysis**
-
-* DSCR (Debt Service Coverage Ratio)
-
-DSCR = Annual Net Cash Flow / Annual Debt ServiceLTCg = Loan Amount / Remaining Guaranteed Salary
-
-Maximum guideline: 0.25
-
-* DTA (Debt-to-Assets)
-
-Full-cycle credit underwriting model for a $10.25M guaranteed contract facility
-
 ## Overview
+This model evaluates specialty loans secured by guaranteed contracts, structured as a 36-month facility with a 12-month deferral period followed by 24 months of principal and interest payments. The analysis covers the full underwriting lifecycle from initial credit assessment through approval recommendation.
 
-This model evaluates specialty loans secured by guaranteed contracts. The analysis covers the full underwriting lifecycle from initial credit assessment through approval recommendation, including cash flow projections, debt service coverage analysis, and risk assessment
+## Key Features
 
-## Model Structure
+```python
 
-| Tab | Description |
-|---|---|
-| Cover | Deal summary and table of contents |
-| Summary | Credit memorandum with approval recommendation |
-| Guidelines | Underwriting standards compliance, key ratio analysis, and risk flags with mitigants |
-| Cash Flow | Four-year personal cash flow model detailing capital available for debt service |
-| Schedule | 36-month amortization schedule with 12 month deferral period, and lender return summary |
-| Sensitivity | Dual sensitivity analysis stress-testing lender interest income and minimum annual DSCR across 30 rate and term scenarios |
-| Inputs | Centralized deal inputs: loan parameters, fee structure, and borrower real estate debt |
-| PFS | Personal financial statement detailing borrower assets, liabilities, and net worth |
-| Contract | Uniform player contract compensation exhibit with incentive structure and analysis |
+- Comprehensive credit assessment
+- Dual sensitivity analysis: 30 stress-test scenarios
+- 36-month amortization schedule with 12-month deferral
+- Underwriting standards compliance framework
+- Risk identification and mitigation strategy
+- Personal financial statement construction
+- 5 C's credit assessment (Character, Capacity, Capital, Collateral, Conditions)
+```
+## Model Components
 
-## Key Deal Metrics
+**Credit Analysis**
+- Debt Service Coverage (DSCR) 
+```python
+DSCR = Annual Net Cash Flow / Annual Debt Service
+```
+* Monthly Payment Calculation (PMT)
+
+```python
+Monthly Payment = PMT(monthly_rate, number_of_months, -loan_amount)
+Total Interest = (Monthly Payment × Term) - Loan Amount
+```
+
+* Amortization
+
+```python
+Beginning Balance = Prior Month Ending Balance
+Interest Payment = Beginning Balance × Monthly Rate
+Principal Payment = Monthly Payment - Interest Payment
+Ending Balance = Beginning Balance - Principal Payment
+```
+- Loan-to-Contract (LTCg) 
+```python
+LTCg = Loan Amount / Remaining Guaranteed Salary
+```
+- Debt-to-Asset (DTA) 
+```python
+DTA = Total Liabilities / Total Assets
+```
+- Debt-to-Income (DTI) 
+```python
+DTI = Monthly Debt Obligation / Monthly Income
+```
+- Interest coverage 
+```python
+Interest Coverage = Annual Net Cash Flow / Annual Interest Expense
+```
+- Liquidity and collateral coverage (Liquidity buffer: months of available cash relative to monthly debt service)
+```python
+Collateral Coverage = Remaining Guaranteed Salary / Loan Amount
+Liquidity = Liquid Assets / Monthly Debt Service
+```
+### Financial Models
+
+* Amortization schedule: 36-month term with 12-month deferral period
+
+```python
+Deferral Period: 12 months (0 payments)
+Repayment Period: 24 months (principal + interest)
+Total Term: 36 months
+```
+
+* Four-year cash flow analysis
+
+```python
+Net Cash Flow = Guaranteed Salary - Documented Expenses
+Available for Debt Service = Net Cash Flow (annual)
+```
+
+* Sensitivity analysis: 30 scenarios
+
+```python
+Stress Test Variables:
+Interest Rate Range: 5% – 12%
+Term Range: 24 – 36 months
+Output: Minimum Annual DSCR, Total Interest Income
+```
+
+* Interest Reserve & Fees
+
+```python
+Interest Reserve = 1% of Loan Amount (funded upfront)
+Origination Fee = 3% of Loan Amount
+Documentation Fee = 10% of Loan Amount
+Total Fees = Interest Reserve + Origination Fee + Documentation Fee
+```
+* Personal financial statement (PFS)
+  * Balance sheet of liquid and non-liquid assets
+
+### Credit Documentation
+
+* Underwriting standards compliance table
+  * Ratio calculations, guideline thresholds, pro forma results, compliance flags
+
+* Risk assessment with mitigants
+  * Risks identified with severity ratings and lender mitigants
+
+* Approval recommendation with supporting rationale
+  * Credit decision backed by quantitative analysis and qualitative risk assessment
+
+## File Structure
+
+#### PC_Analysis_Model.xlsx
+
+1. NBA CONTRACT LOAN (Model overview & navigation guide)
+2. Summary  (Credit memorandum & approval decision)
+3. Guidelines        (Ratio compliance, risk flags, 5 C's framework)
+4. Cash Flow         (4-year income & expense analysis)
+5. Schedule          (36-month amortization with deferral)
+6. Sensitivity       (30-scenario rate/term stress test)
+7. Inputs            (Centralized deal parameters)
+8. PFS               (Personal financial statement)
+9. Contract          (Compensation analysis)
 
 | Metric | Value |
 |---|---|
@@ -47,40 +135,6 @@ This model evaluates specialty loans secured by guaranteed contracts. The analys
 | Total Upfront | $2,352,739 |
 | Total Lender Return | $2,172,978 |
 
-## Model Framework
-
-**Credit Analysis**
-- Debt Service Coverage (DSCR) 
-- DSCR = Annual Net Cash Flow / Annual Debt Service
-- Loan-to-Contract (LTCg) 
-LTCg = Loan Amount / Remaining Guaranteed Salary
-- Debt-to-Asset (DTA) 
-DTA = Total Liabilities / Total Assets
-- Debt-to-Income (DTI) 
-DTI = Monthly Debt Obligation / Monthly Income
-- Interest coverage 
-Interest Coverage = Annual Net Cash Flow / Annual Interest Expense
-- Liquidity and collateral coverage
-Collateral Coverage = Remaining Guaranteed Salary / Loan Amount
-Liquidity buffer: months of available cash relative to monthly debt service
-
-**Financial Models**
-- Amortization schedule with 12-month deferral period
-Principal and interest payment schedule; deferred period followed by 24 months of active repayment
-- Four-year cash flow analysis
-Net cash available for debt service derived from guaranteed contract income and documented expenses
-- Sensitivity analysis 
-Dual sensitivity stress-testing minimum annual DSCR and total interest income across interest rate (5–12%) and term (24–36 months) combinations
-- Personal financial statement (PFS)
-Balance sheet of liquid and non-liquid assets; liabilities and net worth
-
-**Credit Documentation**
-- Formal credit memorandum
-- Underwriting standards compliance table
-- Contract risk analysis
-Risk factors identified (DSCR deterioration, credit profile, use of proceeds) with severity ratings and lender mitigants
-- Approval recommendation
-Credit decision backed by quantitative analysis and qualitative risk assessment
 
 **Tools**
 - Microsoft Excel: dynamic formulas, named ranges, conditional formatting, data validation, PivotTables
@@ -93,4 +147,5 @@ Credit decision backed by quantitative analysis and qualitative risk assessment
 
 © 2025 Kristen Gallagher. All rights reserved. This work is made available for viewing and reference purposes only. You may not reproduce, distribute, modify, or claim this work as your own without explicit written permission from the author.
 
+# NBA Contract Loan Credit Analysis Model
 
