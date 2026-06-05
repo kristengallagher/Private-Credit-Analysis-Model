@@ -1,4 +1,4 @@
-# Private Credit Contract Loan Analysis Model
+# Private Credit Contract Facility Analysis Model
 
 ## Overview
 This model evaluates specialty loans secured by guaranteed contracts, structured as a 36-month facility with a 12-month deferral period followed by 24 months of principal and interest payments. The analysis covers the full underwriting lifecycle from initial credit assessment through approval recommendation.
@@ -6,7 +6,6 @@ This model evaluates specialty loans secured by guaranteed contracts, structured
 ## Key Features
 
 ```python
-
 - Comprehensive credit assessment
 - Dual sensitivity analysis: 30 stress-test scenarios
 - 36-month amortization schedule with 12-month deferral
@@ -17,7 +16,52 @@ This model evaluates specialty loans secured by guaranteed contracts, structured
 ```
 ## Model Components
 
-**Credit Analysis**
+### Financial Models
+
+* Amortization schedule: 36-month term with 12-month deferral period
+
+```python
+Deferral Period: 12 months (0 payments)
+Repayment Period: 24 months (principal + interest)
+Total Term: 36 months
+```
+![Amortization Schedule](images/Schedule_PC.png)
+
+* Sensitivity analysis: 30 scenarios
+
+```python
+Stress Test Variables:
+Interest Rate Range: 5% – 12%
+Term Range: 24 – 36 months
+Output: Minimum Annual DSCR, Total Interest Income
+```
+
+![Sensitivity Analysis Heatmap](images/sensitivity_Heatmap.png)
+
+* Four-year cash flow analysis
+
+```python
+Net Cash Flow = Guaranteed Salary - Documented Expenses
+Available for Debt Service = Net Cash Flow (annual)
+```
+![Cash Flow Analysis](images/CF_PC.png)
+
+* Interest Reserve & Fees
+
+```python
+Interest Reserve = 1% of Loan Amount (funded upfront)
+Origination Fee = 3% of Loan Amount
+Documentation Fee = 10% of Loan Amount
+Total Fees = Interest Reserve + Origination Fee + Documentation Fee
+```
+![Guidleines](images/guideline_PC.png)
+ 
+* Personal financial statement (PFS)
+  * Balance sheet of liquid and non-liquid assets
+ 
+ ![Cash Flow Analysis](images/PFS_PC.png)
+
+### Credit Analysis
 - Debt Service Coverage (DSCR) 
 ```python
 DSCR = Annual Net Cash Flow / Annual Debt Service
@@ -58,49 +102,6 @@ Interest Coverage = Annual Net Cash Flow / Annual Interest Expense
 Collateral Coverage = Remaining Guaranteed Salary / Loan Amount
 Liquidity = Liquid Assets / Monthly Debt Service
 ```
-### Financial Models
-
-* Amortization schedule: 36-month term with 12-month deferral period
-
-```python
-Deferral Period: 12 months (0 payments)
-Repayment Period: 24 months (principal + interest)
-Total Term: 36 months
-```
-![Amortization Schedule](images/Schedule_PC.png)
-
-* Sensitivity analysis: 30 scenarios
-
-```python
-Stress Test Variables:
-Interest Rate Range: 5% – 12%
-Term Range: 24 – 36 months
-Output: Minimum Annual DSCR, Total Interest Income
-```
-
-![Sensitivity Analysis Heatmap](images/sensitivity_Heatmap.png)
-
-* Four-year cash flow analysis
-
-```python
-Net Cash Flow = Guaranteed Salary - Documented Expenses
-Available for Debt Service = Net Cash Flow (annual)
-```
-![Cash Flow Analysis](images/CF_PC.png)
-
-* Interest Reserve & Fees
-
-```python
-Interest Reserve = 1% of Loan Amount (funded upfront)
-Origination Fee = 3% of Loan Amount
-Documentation Fee = 10% of Loan Amount
-Total Fees = Interest Reserve + Origination Fee + Documentation Fee
-```
- 
-* Personal financial statement (PFS)
-  * Balance sheet of liquid and non-liquid assets
- 
- ![Cash Flow Analysis](images/PFS_PC.png)
 
 ### Credit Documentation
 
