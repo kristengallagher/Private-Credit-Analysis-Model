@@ -1,6 +1,6 @@
-# Private Credit Contract Facility Analysis Model
+# Private Credit Facility Analysis Model
 
-## Overview
+## 
 This model evaluates specialty loans secured by guaranteed contracts, structured as a 36-month facility with a 12-month deferral period followed by 24 months of principal and interest payments. The analysis covers the full underwriting lifecycle from initial credit assessment through approval recommendation.
 
 ## Key Features
